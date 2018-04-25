@@ -1,0 +1,62 @@
+<mat-card>
+  <form class="email-form" #f="ngForm" novalidate>
+    <div class="form-row">
+      <div class="col-md-6 mb-3">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="timeSlot Per client" ngModel name="timeSlot" #timeSlot="ngModel" required>
+        </mat-form-field>
+      </div>
+      <div class="col-md-6 mb-3">
+        <mat-form-field>
+          <input matInput placeholder="Consult Fee" type="number" class="example-right-align" ngModel name="consultFee" #consultFee="ngModel"
+            required>
+          <span matPrefix>Rs&nbsp;</span>
+          <span matSuffix>.00</span>
+        </mat-form-field>
+      </div>
+      <div class="col-md-6 mb-3">
+        <mat-form-field>
+          <input matInput placeholder="Fllow up Consult Fee" type="number" class="example-right-align" ngModel name="flConsultFee"
+            #flConsultFee="ngModel">
+          <span matPrefix>Rs&nbsp;</span>
+          <span matSuffix>.00</span>
+        </mat-form-field>
+      </div>
+      <div class="col-md-12 mb-3">
+        <h5>Office Location:</h5>
+      </div>
+      <div class="col-md-6 mb-3">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Street" ngModel name="street" #street="ngModel" required>
+        </mat-form-field>
+      </div>
+      <div class="col-md-6 mb-3">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="City" ngModel name="city" #city="ngModel" required>
+        </mat-form-field>
+      </div>
+      <div class="col-md-3 mb-3">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="State" ngModel name="state" #state="ngModel" required>
+        </mat-form-field>
+      </div>
+      <div class="col-md-3 mb-3">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Country" ngModel name="country" #country="ngModel" required>
+        </mat-form-field>
+      </div>
+      <div class="col-md-3 mb-3">
+        <mat-form-field>
+          <input matInput #input maxlength="6" placeholder="Zip" ngModel name="zip" #zip="ngModel" required>
+          <mat-hint align="end">{{input.value?.length || 0}}/6</mat-hint>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="btn-content pt-3">
+      <mat-checkbox>Location</mat-checkbox>
+      <button mat-raised-button class="float-right" (click)="createOffice(f.value)">Submit
+        <!-- <i class="material-icons">keyboard_arrow_right</i> -->
+      </button>
+    </div>
+  </form>
+</mat-card>

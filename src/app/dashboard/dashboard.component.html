@@ -1,0 +1,98 @@
+<div class="side-nav">
+  <ul class="nav">
+    <a class="navbar-brand" routerLink="/" style="display: block; margin-left: auto; margin-right: auto">
+      <img class="img-fluid" src="../../favicon.ico" style="max-height:80px">
+    </a>
+    <li class="nav-item">
+      <a class="nav-link active" routerLink="/dashboard/home">
+        <i class="fa fa-home"></i>
+        <!-- <mat-icon>home</mat-icon> -->
+        <span>Home</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/dashboard/profile">
+        <i class="fa fa-user-md"></i>
+        <span>My Account</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/dashboard/appointments">
+        <i class="fa fa-calendar-check"></i>
+        <span>Appointments</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/dashboard/stats">
+        <i class="fas fa-chart-line"></i>
+        <span>Stats</span>
+      </a>
+    </li>
+    <!-- <li class="nav-item">
+      <a class="nav-link" routerLink="/dashboard/payments">
+        <i class="fa fa-credit-card"></i>
+        <span>Payments</span>
+      </a>
+    </li> -->
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/dashboard/settings">
+        <i class="fas fa-cog"></i>
+        <span>Settings</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/dashboard/help">
+        <i class="fa fa-exclamation"></i>
+        <span>Help</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/dashboard/about">
+        <i class="fa fa-question"></i>
+        <span>About</span>
+      </a>
+    </li>
+  </ul>
+  <footer class="footer">Medicus 1.0 &copy; Copyright 2018-ADASHA</footer>
+</div>
+
+
+<div class=" main-content">
+  <nav class="navbar navbar-expand-sm navbar-light sticky-top no-gutters" style="background-color: white;">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <mat-icon>search</mat-icon>
+        </li>
+      </ul>
+      <!-- <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form> -->
+    </div>
+    <div class="doc-name mr-auto" style="padding: 5px 2px; margin-left:10px">
+      <span>Hi,</span>
+      <span style="font-weight: 600; color:blue; text-transform: uppercase">{{ currentUser.first_name }} {{ currentUser.last_name }}</span>
+    </div>
+
+    <div style="border-left:1px solid #d1d1d1; font-size:20px; margin-left:10px">
+      <i class="far fa-bell" style="margin-left:10px"></i>
+    </div>
+    <div style="border-left:1px solid #d1d1d1; margin-left:10px">
+
+      <i class="fas fa-sign-out-alt" (click)="signout()" style="margin-left:10px"></i>
+
+    </div>
+  </nav>
+
+  <!-- Content on the page -->
+  <div class="content-page clearfix">
+    <router-outlet></router-outlet>
+  </div>
+</div>

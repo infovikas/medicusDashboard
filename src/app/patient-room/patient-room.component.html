@@ -1,0 +1,38 @@
+<mat-card>
+  <div class="row">
+    <div class="col-sm-3 col-xs-12">
+      <mat-card-title>Patient name</mat-card-title>
+      <mat-card-subtitle>Age: </mat-card-subtitle>
+    </div>
+    <div class="col-sm-9 col-xs-12 text-right">
+      <mat-card-content>
+        <div class="row">
+          <div class="col-sm-4 col-xs-12">
+            <button mat-raised-button color="primary" (click)="openModal()">Create Precreption</button>
+          </div>
+          <div class="col-sm-4 col-xs-12">
+            <button mat-raised-button color="primary" (click)="appointmentDone()">Appointment Done</button>
+          </div>
+          <!-- <div class="col-sm-3 col-xs-12">
+            <button mat-raised-button color="accent" (click)="reschedule()">Reschedule</button>
+          </div> -->
+          <div class="col-sm-4 col-xs-12">
+            <button mat-raised-button color="warn" (click)="cancel()"> Cancel</button>
+          </div>
+        </div>
+      </mat-card-content>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-4 col-xs-12">
+      <mat-card-subtitle>Time Slot</mat-card-subtitle>
+    </div>
+    <div class="col-sm-4 col-xs-12">
+      From: 9:00am
+    </div>
+    <div class="col-sm-4 col-xs-12">
+      To: 9:15am
+    </div>
+  </div>
+</mat-card>

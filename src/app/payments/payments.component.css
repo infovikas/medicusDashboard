@@ -1,0 +1,34 @@
+p{
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    color: black;
+}
+h1{
+    color: blue;
+    font-weight: 400;
+}
+h4{
+    color: blue;
+    font-weight: 400;
+}
+.pcard{
+    max-height: 140px !important;
+}
+.picon{
+     font-size: 56px;
+     font-weight: 900;
+     display: flex;
+     align-items: center;
+     
+}
+.icon-left-bor{
+    border-left:2px solid #cfacac;
+    height: 150px;
+}
+.cust-img{
+    max-width: 162px;
+    max-height: 161px;
+    border: 1px;
+    box-shadow: 1px 1px 1px 1px rgb(241, 229, 229);
+}

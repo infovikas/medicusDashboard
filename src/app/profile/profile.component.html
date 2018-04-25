@@ -1,0 +1,347 @@
+<!-- Cover Image -->
+<div>
+  <img class="cover-image" src="../assets/img/cover.png" alt="">
+</div>
+
+<div class="pcontent">
+  <div class="row">
+    <div class="col-sm-3 order-lg-1 text-center profile-side-menu">
+      <div>
+        <img src="https://rajeshindia-production.s3.amazonaws.com/uploads/management/image/3/Dummy_Image_Man.jpg" class="mx-auto img-fluid img-circle d-block"
+          alt="DocName" style="max-height: 180px; width:auto">
+      </div>
+      <!-- <mat-progress-bar mode="determinate" value="40"></mat-progress-bar> -->
+      <mat-card-content>
+        <h5 class="pt-3">Profile completion</h5>
+        <section class="prog-section mx-auto">
+          <mat-progress-bar [color]="color" [mode]="mode" [value]="value" [bufferValue]="bufferValue">
+          </mat-progress-bar>
+        </section>
+      </mat-card-content>
+
+      <div class="completed-step mt-3">
+        <h5 class="h5-font-some">Completed Steps</h5>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" checked> General Info
+          </label>
+        </div>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input"> Location
+          </label>
+        </div>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" checked> Education
+          </label>
+        </div>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" checked> Certificate
+          </label>
+        </div>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input"> Projects
+          </label>
+        </div>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" checked> Resume
+          </label>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="profile-body container col-sm-9 order-lg-2">
+      <div class="row align-items-center">
+        <div class=" col-md-4 col-sm-12 mobcenter">
+          <h4>{{currentUser.first_name}} {{currentUser.last_name}}</h4>
+        </div>
+        <div class=" col-md-4 col-sm-12 mobcenter ">
+          <p style="color:blue;">{{currentUser.email}}</p>
+        </div>
+        <!-- <div class=" col-md-4 col-sm-12 mobcenter rating mx-auto">
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+        </div> -->
+      </div>
+      <mat-divider></mat-divider>
+      <mat-card-content>
+        <mat-tab-group md-stretch-tabs>
+          <mat-tab label="Seating Time">
+            <div class="row">
+              <mat-card class="pt-1 mb-2 col-sm-4 col-xs-12" *ngFor="let slot of slots">
+                <mat-card-title>{{ slot['day'] }}</mat-card-title>
+                <mat-card-content>Start Time: {{ slot['startTime']}}</mat-card-content>
+                <mat-card-content>End Time: {{ slot['endTime']}}</mat-card-content>
+                <mat-card-content>Average Time: {{ slot['avgTime']}}</mat-card-content>
+              </mat-card>
+              <mat-card class="pt-1 mb-2 col-sm-4 col-xs-12">
+                <mat-card-title>Add Slots</mat-card-title>
+                <button mat-raised-button>
+                  <i class="material-icons office-add" (click)="slotModal()">add</i>
+                </button>
+              </mat-card>
+            </div>
+          </mat-tab>
+          <mat-tab label="Speciality">
+            <!-- <div>
+                    <mat-list>
+                      <h3 mat-subheader>Speciality</h3>
+                      <mat-list-item *ngFor="let folder of folders">
+                        <mat-icon mat-list-icon>folder</mat-icon>
+                        <h4 mat-line>{{folder.name}}</h4>
+                        <p mat-line> {{folder.updated | date}} </p>
+                      </mat-list-item>
+                      <mat-divider></mat-divider>
+                    </mat-list>
+                  </div> -->
+            <form>
+              <div class="row">
+                <mat-card>
+                  <div class="col-md-10">
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Speciality" ngModel name="spclity" #spclity="ngModel" required>
+                    </mat-form-field>
+                  </div>
+                </mat-card>
+                <div class="col-md-2">
+                  <button mat-raised-buton>Submit</button>
+                </div>
+
+              </div>
+            </form>
+          </mat-tab>
+          <mat-tab label="Consultation">
+            <div>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis
+              vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur
+              felis nec, feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor, orci enim
+              rutrum enim, vel tempor sapien arcu a tellus.
+            </div>
+          </mat-tab>
+
+          <mat-tab label="Edit Prifile">
+            <div class="pt-3">
+              <form role="form">
+                <div class="form-group row">
+                  <label class="col-lg-3 col-form-label form-control-label">First name</label>
+                  <div class="col-lg-9">
+                    <input class="form-control" type="text" value="Name">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-lg-3 col-form-label form-control-label">Last name</label>
+                  <div class="col-lg-9">
+                    <input class="form-control" type="text" value="l name">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-lg-3 col-form-label form-control-label">Email</label>
+                  <div class="col-lg-9">
+                    <input class="form-control" type="email" value="email@gmail.com">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-lg-3 col-form-label form-control-label">Company</label>
+                  <div class="col-lg-9">
+                    <input class="form-control" type="text" value="">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-lg-3 col-form-label form-control-label">Website</label>
+                  <div class="col-lg-9">
+                    <input class="form-control" type="url" value="">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-lg-3 col-form-label form-control-label">Address</label>
+                  <div class="col-lg-9">
+                    <input class="form-control" type="text" value="" placeholder="Street">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-lg-3 col-form-label form-control-label"></label>
+                  <div class="col-lg-6">
+                    <input class="form-control" type="text" value="" placeholder="City">
+                  </div>
+                  <div class="col-lg-3">
+                    <input class="form-control" type="text" value="" placeholder="State">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-lg-3 col-form-label form-control-label">Time Zone</label>
+                  <div class="col-lg-9">
+                    <select id="user_time_zone" class="form-control" size="0">
+                      <option value="Hawaii">(GMT-10:00) Hawaii</option>
+                      <option value="Alaska">(GMT-09:00) Alaska</option>
+                      <option value="Pacific Time (US &amp; Canada)">(GMT-08:00) Pacific Time (US &amp; Canada)</option>
+                      <option value="Arizona">(GMT-07:00) Arizona</option>
+                      <option value="Mountain Time (US &amp; Canada)">(GMT-07:00) Mountain Time (US &amp; Canada)</option>
+                      <option value="Central Time (US &amp; Canada)" selected="selected">(GMT-06:00) Central Time (US &amp; Canada)</option>
+                      <option value="Eastern Time (US &amp; Canada)">(GMT-05:00) Eastern Time (US &amp; Canada)</option>
+                      <option value="Indiana (East)">(GMT-05:00) Indiana (East)</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-lg-3 col-form-label form-control-label">Username</label>
+                  <div class="col-lg-9">
+                    <input class="form-control" type="text" value="abcxvg">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-lg-3 col-form-label form-control-label">Password</label>
+                  <div class="col-lg-9">
+                    <input class="form-control" type="password" value="11111122333">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-lg-3 col-form-label form-control-label">Confirm password</label>
+                  <div class="col-lg-9">
+                    <input class="form-control" type="password" value="11111122333">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-lg-3 col-form-label form-control-label"></label>
+                  <div class="col-lg-9">
+                    <input type="reset" class="btn btn-secondary" value="Cancel">
+                    <input type="button" class="btn btn-primary" value="Save Changes">
+                  </div>
+                </div>
+              </form>
+            </div>
+          </mat-tab>
+        </mat-tab-group>
+      </mat-card-content>
+
+
+
+
+      <div class="row mt-2">
+        <!-- <div class="col-4">
+        <mat-list>
+          <h3 mat-subheader>Speciality</h3>
+          <mat-list-item *ngFor="let folder of folders">
+            <mat-icon mat-list-icon>folder</mat-icon>
+            <h4 mat-line>{{folder.name}}</h4>
+            <p mat-line> {{folder.updated | date}} </p>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+        </mat-list>
+      </div>
+      <div class="col-4">
+        <h5>Consultation</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid ipsa dolore nesciunt fuga distinctio vero eaque
+          maiores dolores, alias facilis minus eveniet doloremque laborum vel, consectetur vitae asperiores tempora saepe.</p>
+      </div>
+      <div class="col-4">
+        <h5>Seating time</h5>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non eos sit, ad nulla incidunt autem aut cumque eaque nisi
+          veritatis. Sequi dolores porro itaque sint amet consequuntur maxime, in expedita.</p>
+      </div> -->
+        <div>
+
+        </div>
+        <!-- <nav mat-tab-nav-bar>
+        <a mat-tab-link
+           *ngFor="let link of navLinks"
+           [routerLink]="link.path"
+           routerLinkActive #rla="routerLinkActive"
+           [active]="rla.isActive">
+          {{link.label}}
+        </a>
+      </nav> -->
+
+      </div>
+      <div>
+        <h5>Background</h5>
+        <mat-divider></mat-divider>
+        <p>Whether you’re a new medical school graduate or an experienced doctor looking for new opportunities, your doctor
+          resume is an important component in the hiring process. Our resume examples for physicians are intended to help
+          you in building your own resume. Choose from multiple designs, and review the resume example copy below for useful
+          tips you can use to make your resume better. It just might make the difference in helping you get the position
+          you’re looking for.
+        </p>
+      </div>
+
+
+      <div class="row">
+        <div class="col-sm-6 col-xs-12">
+          <h4>Location / Offices</h4>
+        </div>
+        <!-- <div class="col-6">
+          <button type="button" class="btn-outline-primary btn-sm float-right mr-2" (click)="openModal()">
+            <i class="fas fa-pencil-alt">Edit</i>
+          </button>
+        </div> -->
+      </div>
+      <mat-divider></mat-divider>
+      <div class="row">
+
+        <mat-card class="pt-1 mb-2 col-sm-4 col-xs-12" *ngFor="let office of offices">
+          <mat-card-title>{{ office['officeName'] }}</mat-card-title>
+          <mat-card-content>Street: {{ office['street']}}</mat-card-content>
+          <mat-card-content>City: {{ office['city']}}</mat-card-content>
+          <mat-card-content>Country: {{ office['country']}}</mat-card-content>
+          <mat-card-content>Zip: {{ office['zip']}}</mat-card-content>
+        </mat-card>
+        <mat-card class="pt-1 mb-2 col-sm-4 col-xs-12">
+          <mat-card-content>
+            <h5>Update Your Office</h5>
+            <button mat-raised-button (click)="openModal()">
+              <i class="material-icons office-add">add</i>
+            </button>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+      <div class="row">
+        <div class="col-6">
+          <h4>Education</h4>
+        </div>
+        <div class="col-6">
+          <button type="button" class="btn-outline-primary btn-sm float-right mr-2">
+            <i class="fas fa-pencil-alt">Edit</i>
+          </button>
+        </div>
+      </div>
+      <mat-divider></mat-divider>
+      <div class="row">
+        <div class="col-4">
+          <h5>Lorem ipsum</h5>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima adipisci assumenda quos cum iusto rem dicta voluptatibus
+            blanditiis, excepturi nisi corporis praesentium! Iusto culpa nobis quisquam quos odio minus omnis?</p>
+        </div>
+        <div class="col-4">
+          <h5>Lorem ipsum</h5>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima adipisci assumenda quos cum iusto rem dicta voluptatibus
+            blanditiis, excepturi nisi corporis praesentium! Iusto culpa nobis quisquam quos odio minus omnis?</p>
+        </div>
+        <div class="col-4">
+          <h5>Lorem ipsum</h5>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima adipisci assumenda quos cum iusto rem dicta voluptatibus
+            blanditiis, excepturi nisi corporis praesentium! Iusto culpa nobis quisquam quos odio minus omnis?</p>
+        </div>
+        <mat-divider></mat-divider>
+      </div>
+      <!-- <div class="row">
+        <div class="col-6">
+          <h4>Certificates</h4>
+        </div>
+        <div class="col-6">
+          <button type="button" class="btn-outline-primary float-right mr-2">
+            <i class="fas fa-pencil-alt">Edit</i>
+          </button>
+        </div>
+      </div>
+      <mat-divider></mat-divider> -->
+    </div>
+  </div>
+</div>

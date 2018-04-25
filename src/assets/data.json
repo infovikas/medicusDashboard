@@ -1,0 +1,32 @@
+[
+    {
+        "id": "32b42e71-2b74-11e8-9bf7-bb8b1ecd5f5b",
+        "first_name": "Paige",
+        "last_name": "Life",
+        "professional_statement": "Lorem Ipsum",
+        "practicing_from": "2018-03-18T18:30:00.000Z",
+        "contact_number": "8564929711",
+        "email": "fakeemail8564929711@gmail.com",
+        "profile_image_url": null,
+        "doctor_id": "32a07f60-2b74-11e8-9bf7-bb8b1ecd5f5b",
+        "qualification_name": "Muscoskeletal Radiology",
+        "institute_name": "Some Awesome College",
+        "procurement_year": "2000-10-12T18:30:00.000Z",
+        "hospital_affiliation_id": null,
+        "time_slot_per_client_in_min": 15,
+        "first_consultation_fee": 336,
+        "followup_consultation_fee": 212,
+        "street_address": "Some Street Name",
+        "city": "some city",
+        "state": "some state",
+        "country": "some country",
+        "zip": "201002",
+        "location_coordinates": {
+            "x": 2.89221492756587,
+            "y": 2.87968469126598
+        },
+        "office_id": "32a07f61-2b74-11e8-9bf7-bb8b1ecd5f5b",
+        "availability": "{\"Sunday\":{\"is_available\":true,\"Morning\":{\"is_available\":true,\"start_time\":10,\"end_time\":12},\"Noon\":{\"is_available\":true,\"start_time\":2,\"end_time\":4},\"Evening\":{\"is_available\":true,\"start_time\":8,\"end_time\":10}}}",
+        "specialization_id": "5a543dcb-2b48-11e8-bdf3-452af0a06789"
+    }
+]

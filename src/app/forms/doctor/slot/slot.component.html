@@ -1,0 +1,63 @@
+<mat-card>
+  <form #slot="ngForm" >
+    <h5 style="color:blue;">Please add your office time slot</h5>
+    <div class="row">
+      <div class="col-sm-6">
+        <mat-form-field>
+          <mat-select [(value)]="selected" name="day" ngModel #day="ngModel">
+            <mat-option value="monday">Monday</mat-option>
+            <mat-option value="tuesday">Tuesday</mat-option>
+            <mat-option value="wedenesday">Wedenesday</mat-option>
+            <mat-option value="thurseday">Thurseday</mat-option>
+            <mat-option value="friday">Friday</mat-option>
+            <mat-option value="satuarday">Satuarday</mat-option>
+            <mat-option value="sunday">Sunday</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <p>You selected: {{selected}}</p>
+        <!-- <mat-form-field>
+          <input matInput [matDatepicker]="picker" placeholder="Choose a date" name="date" ngModel #date="ngModel">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field> -->
+      </div>
+      <div class="col-sm-6">
+        <h5>Morning</h5>
+        <mat-form-field>
+          <input matInput type="time" placeholder="Start Time" ngModel name="morningstartTime" #startTime="ngModel">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="time" placeholder="End Time" ngModel name="morningendTime" #endTime="ngModel">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="number" placeholder="Average Time" ngModel name="morningavgTime" #avgTime="ngModel">
+        </mat-form-field>
+      </div>
+      <div class="col-sm-6">
+        <h5>Afternoon</h5>
+        <mat-form-field>
+          <input matInput type="time" placeholder="Start Time" ngModel name="noonstartTime" #startTime="ngModel">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="time" placeholder="End Time" ngModel name="noonendTime" #endTime="ngModel">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="number" placeholder="Average Time" ngModel name="noonavgTime" #avgTime="ngModel">
+        </mat-form-field>
+      </div>
+      <div class="col-sm-6">
+        <h5>Evening</h5>
+        <mat-form-field>
+          <input matInput type="time" placeholder="Start Time" ngModel name="evestartTime" #startTime="ngModel">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="time" placeholder="End Time" ngModel name="eveendTime" #endTime="ngModel">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="number" placeholder="Average Time" ngModel name="eveavgTime" #avgTime="ngModel">
+        </mat-form-field>
+      </div>
+    </div>
+    <button mat-raised-button color="primary" class="float-right" (click)="slotdata(slot)">Submit Details</button>
+  </form>
+</mat-card>

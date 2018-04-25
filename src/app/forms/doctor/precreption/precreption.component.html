@@ -1,0 +1,42 @@
+<mat-card>
+  <form>
+    <div class="row">
+      <div class="col-sm-5 col-xs-12">
+        <mat-card-subtitle>Name Of Medicine</mat-card-subtitle>
+        <mat-form-field>
+          <input matInput placeholder="Medicine">
+        </mat-form-field>
+
+      </div>
+      <div class="col-sm-4 col-xs-12">
+        <mat-card-subtitle>Frequency</mat-card-subtitle>
+        <mat-form-field>
+          <mat-select [(value)]="selected">
+            <mat-option>None</mat-option>
+            <mat-option value="1_times">1 Times</mat-option>
+            <mat-option value="2_times">2 Times</mat-option>
+            <mat-option value="3_times">3 Times</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <p>You selected: {{selected}}</p>
+      </div>
+      <div class="col-sm-3 col-xs-12">
+        <mat-card-subtitle>No. of days</mat-card-subtitle>
+        <mat-form-field>
+          <input matInput placeholder="No of Days" type="number">
+        </mat-form-field>
+      </div>
+    </div>
+    <mat-form-field>
+      <input matInput [matDatepicker]="dp3" placeholder="Next followup Checkup" disabled>
+      <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
+      <mat-datepicker #dp3 disabled="false"></mat-datepicker>
+    </mat-form-field>
+    <div class="btn-content pt-3">
+      <!-- <mat-checkbox>Accept term and condition!</mat-checkbox> -->
+      <button mat-raised-button class="float-right" color="primary">Submit
+        <!-- <i class="material-icons">keyboard_arrow_right</i> -->
+      </button>
+    </div>
+  </form>
+</mat-card>

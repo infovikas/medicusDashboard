@@ -1,0 +1,70 @@
+.signin {
+    display: flex;
+    flex-direction: column;
+  }
+  .signin > * {
+    width: 100%;
+  }
+  mat-form-field.mat-form-field {
+    font-size: 16px;
+  }
+  .email-form {
+    width: 100%;
+  }
+  .example-full-width {
+    width: 100%;
+  }
+  .abc{
+    background-image: url("../../../assets/img/Bg.png");
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    z-index: 1099;
+  }
+  /* .xyz{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+  background-color: rgba(0,0, 0, 0,5);
+  } */
+  /* .login-box{
+    max-width: 420px;
+    max-height: 320px;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+  } */
+  .logo{
+    left: 45%;
+    position: absolute;
+  }
+  
+  
+  .dfg{
+    max-width: 520px;
+    height: auto;
+    top: 60%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    /* background-color: transparent; */
+  }
+  
+  .mat-raised-button{
+    border-radius: 10px;
+  }
+  .logo_img{
+    max-width: 120px;
+    height: auto;
+  }
+  
+  

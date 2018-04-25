@@ -1,0 +1,84 @@
+<div class="abc">
+  <div class="header-component">
+    <div class="row d-inline-flex">
+      <div class="row preview ml-5 pt-5" style="color:white">
+        <div>
+          <i class="material-icons">keyboard_arrow_left</i>
+        </div>
+        <div class="ml-2">Back to Preview</div>
+      </div>
+      <div class="logo mx-auto pt-4">
+        <img src="../../../favicon.ico" alt="Medicus" class="logo_img img-fluid">
+      </div>
+
+    </div>
+    <div class="row float-right mr-5 pt-5">
+      <div>
+        <p class="mr-3 pt-1">Already a member?</p>
+      </div>
+      <div>
+        <button mat-raised-button class="float-right" routerLink="/login">Signin</button>
+      </div>
+
+    </div>
+  </div>
+  <mat-card class="dfg">
+    <form class="email-form" #f_doc="ngForm" novalidate>
+      <div class="form-row">
+        <div class="col-md-12 mb-3">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Specialisation" ngModel name="spslisation" #spslisation="ngModel" required>
+          </mat-form-field>
+        </div>
+        <div class="col-md-12 mb-3">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Enter your profession statement" ngModel name="pstatement" #pstatement="ngModel" required>
+            <span matPrefix class="mr-1">Profession Statement:</span>
+          </mat-form-field>
+        </div>
+        <div class="col-md-12 mb-3">
+          <mat-form-field class="example-full-width">
+            <input matInput [matDatepicker]="picker" placeholder="Practicing from: dd/mm/yyyy" ngModel name="practfrom" #practfrom="ngModel" required>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div class="col-md-12 mb-3">
+          <h5>Office Location:</h5>
+        </div>
+        <div class="col-md-6 mb-3">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Street" ngModel name="street" #street="ngModel" required>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6 mb-3">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="City" ngModel name="city" #city="ngModel" required>
+          </mat-form-field>
+        </div>
+        <div class="col-md-3 mb-3">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="State" ngModel name="state" #state="ngModel" required>
+          </mat-form-field>
+        </div>
+        <div class="col-md-3 mb-3">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Country" ngModel name="country" #country="ngModel" required>
+          </mat-form-field>
+        </div>
+        <div class="col-md-3 mb-3">
+          <mat-form-field>
+            <input matInput #input maxlength="6" placeholder="Zip" ngModel name="zip" #zip="ngModel" required>
+            <mat-hint align="end">{{input.value?.length || 0}}/6</mat-hint>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="btn-content pt-3">
+        <mat-checkbox>Accept term and condition!</mat-checkbox>
+        <button mat-raised-button class="float-right" >Submit
+          <!-- <i class="material-icons">keyboard_arrow_right</i> -->
+        </button>
+      </div>
+    </form>
+  </mat-card>
+</div>

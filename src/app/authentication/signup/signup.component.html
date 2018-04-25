@@ -1,0 +1,188 @@
+<div class="abc">
+  <div class="header-component">
+    <div class="row d-inline-flex">
+      <div class="row preview ml-5 pt-5" style="color:white">
+        <div>
+          <i class="material-icons">keyboard_arrow_left</i>
+        </div>
+        <div class="ml-2">Back to Preview</div>
+      </div>
+      <div class="logo mx-auto pt-4">
+        <img src="../../../favicon.ico" alt="Medicus" class="logo_img img-fluid">
+      </div>
+
+    </div>
+    <div class="row float-right mr-5 pt-5">
+      <div>
+        <p class="mr-3 pt-1">Already a member?</p>
+      </div>
+      <div>
+        <button mat-raised-button class="float-right" (click)="redirectSingin()">Signin</button>
+      </div>
+
+    </div>
+  </div>
+  <mat-card class="dfg">
+    <!-- <mat-tab-group>
+      <mat-tab label="Doctor Registration">
+        <form #f="ngForm" novalidate>
+          <div class="form-row">
+            <div class="col-md-6 mb-3">
+
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="First Name" ngModel name="fname" minlength="4" appForbiddenName="bob" #fname="ngModel" required>
+
+              </mat-form-field>
+            </div>
+            <div class="col-md-6 mb-3">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Last Name" ngModel name="lname" #lname="ngModel" required>
+              </mat-form-field>
+            </div>
+            <div class="col-md-12 mb-3">
+              <mat-form-field class="example-full-width">
+
+                <input type="tel" matInput color="" placeholder="Mobile 9189xxxxxx26" maxlength="12" ngModel name="mobile" #mobile="ngModel"
+                  required>
+                <mat-icon matSuffix>mode_edit</mat-icon>
+              </mat-form-field>
+            </div>
+            <div class="col-md-12 mb-3">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Email" ngModel name="email" #email="ngModel" required>
+                <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                  Please enter a valid email address
+                </mat-error>
+                <mat-error *ngIf="emailFormControl.hasError('required')">
+                  Email is
+                  <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div class="col-md-12 mb-3">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'" ngModel name="password" #password="ngModel"
+                  required>
+                <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+              </mat-form-field>
+            </div>
+            <div class="col-md-12 mb-3">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Confirm password" [type]="hide ? 'password' : 'text'" autocomplete="off">
+                <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="btn-content pt-3">
+
+            <button mat-raised-button [disabled]="!f.dirty && !f.touched && !f.valid" (click)="onSubmit(f)" class="float-right">Next
+              <i class="material-icons">keyboard_arrow_right</i>
+            </button>
+          </div>
+        </form>
+      </mat-tab>
+      <mat-tab label="Hospital Registration">
+        <form>
+          <div class="form-row">
+            <div class="col-md-12 mb-3">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Enter Hospital Resistration Number" ngModel name="h_registration_no" minlength="4" appForbiddenName="bob"
+                  #h_registration_no="ngModel" required>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="btn-content pt-3">
+            <button mat-raised-button class="float-right">Submit</button>
+          </div>
+        </form>
+        <mat-card-header class="ml-2">Or</mat-card-header>
+        <form>
+          <div class="form-row">
+            <div class="col-md-12 mb-3 pt-3">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Hospital Name" ngModel name="h_name" minlength="4" appForbiddenName="bob" #h_name="ngModel"
+                  required>
+              </mat-form-field>
+            </div>
+            <div class="col-md-12 mb-3">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Hospital_Email" ngModel name="h_email" #h_email="ngModel" required>
+                <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                  Please enter a valid email address
+                </mat-error>
+                <mat-error *ngIf="emailFormControl.hasError('required')">
+                  Email is
+                  <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="btn-content pt-3">
+            <button mat-raised-button class="float-right" color="primary">Submit</button>
+          </div>
+        </form>
+      </mat-tab>
+    </mat-tab-group> -->
+    <form #f="ngForm" novalidate>
+      <div class="form-row">
+        <div class="col-md-6 mb-3">
+
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="First Name" ngModel name="fname" minlength="4" appForbiddenName="bob" #fname="ngModel" required>
+
+          </mat-form-field>
+        </div>
+        <div class="col-md-6 mb-3">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Last Name" ngModel name="lname" #lname="ngModel" required>
+          </mat-form-field>
+        </div>
+        <!-- <div class="col-md-12 mb-3">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Speciality" ngModel name="spclity" #spclity="ngModel" required>
+          </mat-form-field>
+        </div> -->
+        <div class="col-md-12 mb-3">
+          <mat-form-field class="example-full-width">
+
+            <input type="tel" matInput color="" placeholder="Mobile 9189xxxxxx26" maxlength="12" ngModel name="mobile" #mobile="ngModel"
+              required>
+            <mat-icon matSuffix>mode_edit</mat-icon>
+          </mat-form-field>
+        </div>
+        <div class="col-md-12 mb-3">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Email" ngModel name="email" #email="ngModel" required>
+            <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+              Please enter a valid email address
+            </mat-error>
+            <mat-error *ngIf="emailFormControl.hasError('required')">
+              Email is
+              <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-md-12 mb-3">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'" ngModel name="password" #password="ngModel"
+              required>
+            <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+          </mat-form-field>
+        </div>
+        <div class="col-md-12 mb-3">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Confirm password" [type]="hide ? 'password' : 'text'" autocomplete="off">
+            <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="btn-content pt-3">
+
+        <button mat-raised-button [disabled]="!f.dirty && !f.touched && !f.valid" (click)="onSubmit(f)" class="float-right">Next
+          <i class="material-icons">keyboard_arrow_right</i>
+        </button>
+      </div>
+    </form>
+
+  </mat-card>
+</div>

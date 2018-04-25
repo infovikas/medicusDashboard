@@ -1,0 +1,6 @@
+    <mat-form-field>
+        <mat-select placeholder="Select pause Reason" [formControl]="toppings" multiple>
+          <mat-option *ngFor="let topping of pauseList" [value]="topping">{{topping}}</mat-option>
+        </mat-select>
+      </mat-form-field>  
+      <button class="ml-5 text-right float-right" mat-raised-button color="primary">Pause</button> 
